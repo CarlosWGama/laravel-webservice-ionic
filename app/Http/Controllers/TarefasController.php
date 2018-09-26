@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Usuario;
 
 class TarefasController extends Controller {
 
@@ -11,7 +12,7 @@ class TarefasController extends Controller {
     }
 
     public function cadastrar() {
-
+   
     }
 
     public function editar($id) {
