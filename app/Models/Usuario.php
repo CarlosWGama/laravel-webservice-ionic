@@ -8,4 +8,7 @@ class Usuario extends Model
 {
     //
 
+    protected $fillable = ['email', 'senha'];
+
+    protected $hidden = ['senha'];
 }
