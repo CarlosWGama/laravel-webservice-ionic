@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/login', 'UsuariosController@logar');
 Route::post('/usuario', 'UsuariosController@cadastrar');
 
-Route::group(['prefix' => 'tarefas'], function () {
+Route::group(['prefix' => 'tarefa'], function () {
     Route::get('/', 'TarefasController@buscar');
     Route::post('/', 'TarefasController@cadastrar');
     Route::put('/{id}', 'TarefasController@editar');
