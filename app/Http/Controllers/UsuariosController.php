@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Usuario;
-
+use \Firebase\JWT\JWT;
 
 class UsuariosController extends Controller {
     
@@ -13,7 +13,9 @@ class UsuariosController extends Controller {
         $usuario = Usuario::where('email', $request->input('email'))
                             ->where('senha',$request->input('senha'))
                             ->firstOrFail();
-        return response()->json($usuario, 200);
+
+        $jwt = JWT::encode($usuario, '123456');
+        return response()->json($jwt, 200);
     }
 
     public function cadastrar(Request $request) {
